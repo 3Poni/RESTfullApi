@@ -3,7 +3,7 @@
 Скачать репозиторий
 
 ```bash
-git clone https://github.com/3Poni/RESTfullApi.git
+git clone https://github.com/3Poni/RESTfullApi.git .
 ```
 
 Далее скопировать .env.example в рабочий .env
