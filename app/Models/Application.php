@@ -16,7 +16,8 @@ class Application extends Model
         'credit_term' ,
         'credit_rate' ,
         'credit_description' ,
-        'credit_status'
+        'credit_status',
+        'bank_id'
     ];
 
     protected $hidden = [

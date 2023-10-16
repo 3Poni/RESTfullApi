@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\V1;
 
+use App\Models\Bank;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -31,7 +32,8 @@ class UpdateApplicationRequest extends FormRequest
                 'credit_term' => 'required|integer',
                 'credit_rate' => 'required|integer',
                 'credit_description' => 'required',
-                'credit_status' => ['required', Rule::in(['новая', 'одобрена', 'в процессе', 'отклонена'])]
+                'credit_status' => ['required', Rule::in(['новая', 'одобрена', 'в процессе', 'отклонена'])],
+                'bank_id' => ['required','integer', Rule::in(Bank::all()->pluck('id')->toArray())]
             ];
         }else{
             return [
@@ -41,7 +43,8 @@ class UpdateApplicationRequest extends FormRequest
                 'credit_term' => 'sometimes|required|integer',
                 'credit_rate' => 'sometimes|required|integer',
                 'credit_description' => 'sometimes|required',
-                'credit_status' => ['sometimes','required', Rule::in(['новая', 'одобрена', 'в процессе', 'отклонена'])]
+                'credit_status' => ['sometimes','required', Rule::in(['новая', 'одобрена', 'в процессе', 'отклонена'])],
+                'bank_id' => ['sometimes', 'required','integer', Rule::in(Bank::all()->pluck('id')->toArray())]
             ];
         }
 

@@ -8,6 +8,7 @@ use App\Http\Requests\V1\UpdateApplicationRequest;
 use App\Http\Resources\V1\ApplicationCollection;
 use App\Http\Resources\V1\ApplicationResource;
 use App\Models\Application;
+use App\Models\Bank;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ApplicationController extends Controller
@@ -55,7 +56,7 @@ class ApplicationController extends Controller
     public function destroy(Application $application)
     {
         if($application->deleteOrFail() == 1) {
-            return response()->json(['message' => 'Application deleted successfully'], 200);
+            return response()->json(['message' => 'Application has been deleted successfully'], 200);
         }
     }
 }
