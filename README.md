@@ -24,7 +24,8 @@ docker-compose up -d
 
 ```bash
 docker exec -it app_php composer install --no-interaction
-
+```
+```bash
 docker exec app_php bash -c " php artisan key:generate ; php artisan config:clear ; php artisan cache:clear; php artisan migrate ; php artisan db:seed"
 ```
 После чего приложение будет доступно по адресу:
