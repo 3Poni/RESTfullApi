@@ -23,11 +23,9 @@ docker-compose up -d
 Выполнить поочередно следующие команды:
 
 ```bash
-docker exec -it restfullapi-php-1 composer install --no-interaction
+docker exec -it app_php composer install --no-interaction
 
-docker exec restfullapi-php-1 bash -c " php artisan key:generate ; php artisan config:clear ; php artisan cache:clear; php artisan migrate ; php artisan db:seed"
-
-docker exec restfullapi-php-1 bash -c " php artisan migrate ; php artisan db:seed"
+docker exec app_php bash -c " php artisan key:generate ; php artisan config:clear ; php artisan cache:clear; php artisan migrate ; php artisan db:seed"
 ```
 После чего приложение будет доступно по адресу:
 
