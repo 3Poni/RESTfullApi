@@ -98,7 +98,7 @@ http://127.0.0.1:8000/api/v1/applications
         "credit_rate": 19,
         "credit_description": "Без ПВ, без СЖ",
         "credit_status": "новая",
-        "bank_id": 9
+        "bank_id": 1
 }
 ```
 
