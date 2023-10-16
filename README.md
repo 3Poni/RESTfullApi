@@ -1,5 +1,7 @@
 ## Установка
 
+Docker контейнеры должны работать в среде Linux
+
 Скачать репозиторий
 
 ```bash
@@ -12,11 +14,6 @@ Linux
 ```bash
 cp .env.example .env
 ```
-Windows
-```bash
-copy .env.example .env
-```
-
 
 Далее запустим docker (команду выполнять из корня проекта)
 
