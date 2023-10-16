@@ -8,9 +8,15 @@ git clone https://github.com/3Poni/RESTfullApi.git .
 
 Далее скопировать .env.example в рабочий .env
 
+Linux
 ```bash
 cp .env.example .env
 ```
+Windows
+```bash
+copy .env.example .env
+```
+
 
 Далее запустим docker (команду выполнять из корня проекта)
 
