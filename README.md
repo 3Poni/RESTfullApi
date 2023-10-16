@@ -46,11 +46,28 @@ http://127.0.0.1:8000/api/v1/applications
 
 | Ресурс | Метод | Описание |
 |:---------:|:---------:|:---------:|
-| /api/v1/applications | GET | Получить все "заявки" |
+| /api/v1/applications | GET | Получить "заявки" с первой страницы |
+| /api/v1/applications?page={page} | GET | Получить данные с конкретной страницы |
 | /api/v1/applications | POST | Добавить новую "заявку" |
+| /api/v1/applications/{id} | GET | Получить данные конкретной заявки |
 | /api/v1/applications/{id} | PUT | Обновить все данные в "заявке" |
 | /api/v1/applications/{id} | PATCH | Обновить часть данных в "заявке" |
 | /api/v1/applications/{id} | DELETE | Удалить "заявку" |
+
+На странице выводится по 5 записей,
+навигация по страницам представлена в блоке links,
+который приходит вместе с данными заявок при GET запросе
+на ресурс "/api/v1/applications" 
+
+Пример ответа:
+```
+"links": {
+        "first": "http://127.0.0.1:8000/api/v1/applications?page=1",
+        "last": "http://127.0.0.1:8000/api/v1/applications?page=2",
+        "prev": "http://127.0.0.1:8000/api/v1/applications?page=1",
+        "next": null
+    }
+```
 
 Данные в теле запроса:
 
