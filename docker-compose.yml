@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+    # Nginx Service
     nginx:
         image: nginx
         container_name: ${APP_NAME}_nginx
@@ -17,6 +18,7 @@ services:
             - postgres
     # PHP Service
     php:
+        container_name: app_php
         build:
             context: .
         environment:
@@ -29,6 +31,7 @@ services:
             - "9000:9000"
         depends_on:
             - postgres
+    # PostgreSQL Service       
     postgres:
         image: postgres:16.0
         container_name: ${APP_NAME}_postgres
